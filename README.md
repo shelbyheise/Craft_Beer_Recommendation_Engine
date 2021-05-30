@@ -16,7 +16,7 @@ The basis for this project draws heavily from the datacamp course [“Building R
 ## **Data Cleaning & Processing**
 As the data for this project was already in good shape, there wasn’t much initial cleaning required. The csv files containing brewery information and beer information were merged on brewery_id, and a few column names were changed for clarity. Additional columns were dropped due to missing values. The final dataframe consisted of columns containing information on the beer name, brewery name, alcohol by volume (abv), and brewery location (city).
 
-### Jaccard Similarity - [Processing](Craft_Beer_Recommendation_Engine/Craft Beer Recommendation - Jaccard - Basic Model.ipynb)
+### Jaccard Similarity - [Processing](Craft Beer Recommendation - Jaccard - Basic Model.ipynb)
 For this project, two content-based recommendation engines were created. The first focused on Jaccard similarity, which is measured by comparing the number of shared attributes of two items divided by the total number of combined attributes. The Jaccard similarity score ranges from 0 to 1, with 1 being a “match/most similar.”  In this project, the Jaccard similarity was measured between each beer based on beer_style (lager, IPA, etc.). 
 
 The first step in this process was to apply pandas’ crosstab function to the merged and cleaned dataset to create a vectorized version of the beer attributes. To calculate the Jaccard similarity scores for the entire dataset, scipy’s pdist was applied to the values of the vectorized attributes with the calculation metric set as “jaccard.” Pdist actually measures the distances (differences) between the beers rather than the similarity. To create a similarity array, the results were subtracted from 1 and then converted to a dataframe. 
@@ -28,7 +28,7 @@ The resulting dataframe is filtered based on the preferred beer to produce sever
 As you can see in the screenshot, all of the recommended beers for Arjuna share the beer type “Witbier.” As this model only considers beer type, it is not able to offer very complex recommendations. 
 
 
-### Cosine Similarity - [Processing](Craft_Beer_Recommendation_Engine/Craft Beer Recommendation - Cosine - All Beers.ipynb)
+### Cosine Similarity - [Processing](Cosine - All Beers.ipynb)
 The second recommendation engine for this project focused on cosine similarity. This metric “quantifies the similarity between two or more vectors” (Alake 2020). For this project, cosine similarity was measured on text-based similarities between each beer. Cosine similarity scores measure from 0 to 1, with 1 being an exact match. 
 
 This method is dependent on analyzing text-based similarities and requires an item “description” rather than the clearly labeled attributes (abv, beer_style, etc.). As the dataset did not contain a “description” column, the dataframe was converted to string and the abv, beer_style, brewery_name, and city columns were concatenated to create a description for each beer.
