@@ -45,7 +45,7 @@ In this screenshot, you can see the recommended beers are very different from th
 ## **Final Recommendation Engine**
 
 ### Has all this talk about Jaccard and cosine similarity made you thirsty?
-**I thought so. [Let’s find your next craft beer.](Craft Beer Recommendation.ipynb)**
+**I thought so. [Let’s find your next craft beer.](https://github.com/shelbyheise/Craft_Beer_Recommendation_Engine/blob/main/Craft%20Beer%20Recommendation.ipynb)**
 
 The final recommendation engine is based on cosine similarity, as it allows for a more “nuanced” beer recommendation than the Jaccard score. A dropdown list containing all of the available beers for selection was also added using ipywidgets. The dropdown ensures that the user is only able to select a beer that exists in the dataset and omits possible spelling/capitalization errors.
 
